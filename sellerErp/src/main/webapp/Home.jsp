@@ -12,22 +12,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+      
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC; /* Soft Beige background to match dashboard */
-            color: #36454F; /* Charcoal gray for general text */
+            background-color: #F5F5DC; 
+            color: #36454F; 
         }
         .navbar-custom {
-            background-color: #001f3f; /* Deep Navy Blue to match dashboard */
+            background-color: #001f3f; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .navbar-brand, .nav-link {
             font-weight: 700;
-            color: #F5F5DC !important; /* Beige text for contrast */
+            color: #F5F5DC !important; 
         }
         .btn-login {
-            background-color: #FF8C00; /* Vibrant Orange to match dashboard */
+            background-color: #FF8C00; 
             color: white !important;
             border-radius: 50px;
             padding: 0.5rem 1.5rem !important;
@@ -37,7 +37,7 @@
             background-color: #E57A00;
         }
         
-        /* Hero Section */
+        
         .hero-section {
             padding: 10rem 0;
             text-align: center;
@@ -52,7 +52,7 @@
             font-size: 1.25rem;
             max-width: 600px;
             margin: 1.5rem auto;
-            color: #36454F; /* Charcoal gray for readability */
+            color: #36454F;
         }
         .btn-hero-primary {
             background-color: #FF8C00;
@@ -82,14 +82,14 @@
             color: #fff;
         }
 
-        /* Features Section */
+       
         .features-section {
             padding: 4rem 0;
-            background-color: #F8F8F0; /* Slightly different beige for section background */
+            background-color: #F8F8F0; 
         }
         .feature-card {
             background-color: #fff;
-            color: #36454F; /* Charcoal text */
+            color: #36454F; 
             border-radius: 15px;
             padding: 2.5rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
@@ -104,19 +104,19 @@
         }
         .feature-icon {
             font-size: 3rem;
-            color: #FF8C00; /* Vibrant Orange icon */
+            color: #FF8C00; 
             margin-bottom: 1.5rem;
         }
         .feature-card h4 {
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #001f3f; /* Navy Blue title */
+            color: #001f3f; 
         }
         
-        /* Footer */
+       
         .footer {
-            background-color: #001f3f; /* Deep Navy Blue to match dashboard */
-            color: #F5F5DC; /* Beige text */
+            background-color: #001f3f;
+            color: #F5F5DC; 
             padding: 2rem 0;
             margin-top: 4rem;
         }
