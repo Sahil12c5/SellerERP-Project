@@ -31,20 +31,20 @@
 
         .login-header h2 {
             font-weight: 600;
-            color: #001f3f; /* Deep Navy Blue to match dashboard headings */
+            color: #001f3f;
         }
 
         .login-header p {
-            color: #36454F; /* Charcoal gray for subtext */
+            color: #36454F; 
         }
 
         .form-control:focus {
-            border-color: #FF8C00; /* Vibrant Orange for focus */
+            border-color: #FF8C00; 
             box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
         }
 
         .btn-login {
-            background-color: #FF8C00; /* Vibrant Orange to match dashboard buttons */
+            background-color: #FF8C00; 
             border: none;
             font-weight: 600;
             padding: 0.75rem;
@@ -52,16 +52,16 @@
         }
 
         .btn-login:hover {
-            background-color: #E57A00; /* Darker Orange on hover */
+            background-color: #E57A00; 
         }
 
         .signup-link {
             font-size: 0.9rem;
-            color: #36454F; /* Charcoal gray for text */
+            color: #36454F; 
         }
 
         .signup-link a {
-            color: #FF8C00; /* Vibrant Orange for links */
+            color: #FF8C00; 
             font-weight: 600;
             text-decoration: none;
         }
@@ -75,18 +75,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #F5F5DC; /* Soft Beige text for contrast */
-            background-color: #001f3f; /* Deep Navy Blue background to match dashboard header */
+            color: #F5F5DC; 
+            background-color: #001f3f; 
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
-            height: 100%; /* Ensure it fills the column height */
+            height: 100%; 
         }
         
         .welcome-section i {
             font-size: 5rem;
             margin-bottom: 1.5rem;
-            color: #FF8C00; /* Vibrant Orange for icon */
+            color: #FF8C00; 
         }
 
         

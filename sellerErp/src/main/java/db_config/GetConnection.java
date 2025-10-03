@@ -5,12 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class GetConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/importexport";
-    private static final String USER = "root";       // TODO: change
-    private static final String PASS = "";   // TODO: change
 
     static {
         try {
+     
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("MySQL JDBC Driver not found.", e);
@@ -19,12 +17,22 @@ public class GetConnection {
 
     public static Connection getConnection() {
         Connection con = null;
-		try {
-			con = DriverManager.getConnection(URL, USER, PASS);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        try {
+
+            String dbUrl = System.getenv("DATABASE_URL");
+
+           
+            if (dbUrl == null || dbUrl.isEmpty()) {
+                dbUrl = "jdbc:mysql://localhost:3306/importexport?user=root&password=";
+            }
+
+            
+            con = DriverManager.getConnection(dbUrl);
+
+        } catch (SQLException e) {
+            System.err.println("FATAL: Failed to connect to the database!");
+            e.printStackTrace();
+        }
         return con;
     }
 }

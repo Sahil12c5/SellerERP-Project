@@ -3,10 +3,10 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
-    // Session validation: Check if user is logged in
+
     UserPojo user = (UserPojo) session.getAttribute("user");
     if (user == null) {
-        // User not logged in — redirect to login page
+   
         response.sendRedirect("login.jsp");
         return;
     }
@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+     
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC; /* Soft Beige background */
+            background-color: #F5F5DC; 
             min-height: 100vh;
             padding-top: 5rem;
             display: flex;
@@ -34,27 +34,27 @@
             flex: 1;
         }
         .navbar-custom {
-            background-color: #001f3f; /* Deep Navy Blue */
+            background-color: #001f3f;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
         .navbar-brand, .nav-link {
             font-weight: 700;
-            color: #F5F5DC !important; /* Beige text for contrast */
+            color: #F5F5DC !important; 
         }
         .nav-link.active {
-            color: #FF8C00 !important; /* Orange accent for active link */
+            color: #FF8C00 !important; 
         }
         .nav-link:hover {
-            color: #FF8C00 !important; /* Orange on hover */
+            color: #FF8C00 !important;
         }
         .btn-logout {
-            background-color: #FF8C00; /* Vibrant Orange */
+            background-color: #FF8C00;
             color: white !important;
             border-radius: 50px;
             padding: 0.5rem 1.5rem !important;
             transition: background-color 0.3s ease;
         }
-        .btn-logout:hover { background-color: #E57A00; } /* Darker Orange on hover */
+        .btn-logout:hover { background-color: #E57A00; } 
         .dashboard-container {
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -64,13 +64,13 @@
         }
         .dashboard-header h1 {
             font-weight: 700;
-            color: #001f3f; /* Deep Navy Blue */
+            color: #001f3f; 
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem;
         }
-        .dashboard-header p { color: #36454F; /* Charcoal Gray */ }
+        .dashboard-header p { color: #36454F; / }
         .dashboard-card {
             background: #ffffff;
             border: none;
@@ -83,7 +83,7 @@
         }
         .dashboard-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0, 31, 63, 0.15); /* Navy Blue shadow */
+            box-shadow: 0 8px 25px rgba(0, 31, 63, 0.15); 
         }
         .card-body {
             flex-grow: 1;
@@ -96,12 +96,12 @@
         .card-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #FF8C00; /* Vibrant Orange */
+            color: #FF8C00; 
         }
-        .card-title { font-weight: 600; color: #001f3f; /* Navy Blue */ margin-bottom: 0.5rem; }
-        .card-text { color: #36454F; /* Charcoal Gray */ font-size: 0.9rem; flex-grow: 1; }
+        .card-title { font-weight: 600; color: #001f3f;  margin-bottom: 0.5rem; }
+        .card-text { color: #36454F;  font-size: 0.9rem; flex-grow: 1; }
         .btn-custom {
-            background-color: #FF8C00; /* Vibrant Orange */
+            background-color: #FF8C00; 
             border: none;
             color: white;
             font-weight: 600;
@@ -112,10 +112,10 @@
             display: inline-block;
             margin-top: 1rem;
         }
-        .btn-custom:hover { background-color: #E57A00; color: white; } /* Darker Orange on hover */
+        .btn-custom:hover { background-color: #E57A00; color: white; } 
         .footer {
-            background-color: #001f3f; /* Deep Navy Blue */
-            color: #F5F5DC; /* Beige text */
+            background-color: #001f3f;
+            color: #F5F5DC; 
             padding: 2rem 0;
             margin-top: 4rem;
         }

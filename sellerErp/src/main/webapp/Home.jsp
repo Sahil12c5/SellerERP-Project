@@ -45,7 +45,7 @@
         .hero-section h1 {
             font-weight: 700;
             font-size: 3.5rem;
-            color: #001f3f; /* Deep Navy Blue to match dashboard headings */
+            color: #001f3f; 
             text-shadow: none;
         }
         .hero-section .lead {

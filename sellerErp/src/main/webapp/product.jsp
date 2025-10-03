@@ -1,21 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*, models.Product_pojo, models.UserPojo" %>
 <%
-    // 🔐 Session-based authentication using UserPojo object
+  
     UserPojo user = (UserPojo) session.getAttribute("user");
     if (user == null) {
         response.sendRedirect("login.jsp?msg=Please+log+in+to+manage+products");
         return;
     }
 
-    // Extract port_id from authenticated user
+  
     String sellerPortId = user.getPortId();
 
-    // Data from servlet
+ 
     List<Product_pojo> productList = (List<Product_pojo>) request.getAttribute("productList");
     Product_pojo editProduct = (Product_pojo) request.getAttribute("editProduct");
 
-    // Handle flash messages (session-scoped)
+   
     String flash = (String) session.getAttribute("flash");
     if (flash != null) {
         session.removeAttribute("flash");
@@ -23,7 +23,7 @@
 %>
 
 <%!
-    // Utility method to escape HTML for safety
+    
     public static String escapeHtml(String s) {
         if (s == null) return "";
         return s.replace("&", "&amp;")
@@ -46,10 +46,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+    
         body { 
             font-family: 'Poppins', sans-serif; 
-            background-color: #F5F5DC; /* Soft Beige background to match dashboard */
+            background-color: #F5F5DC; 
             min-height: 100vh; 
             padding-top: 5rem; 
             display: flex; 
@@ -59,21 +59,21 @@
             flex: 1; 
         }
         .navbar-custom { 
-            background-color: #001f3f; /* Deep Navy Blue to match dashboard */
+            background-color: #001f3f; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
         .navbar-brand, .nav-link { 
             font-weight: 700; 
-            color: #F5F5DC !important; /* Beige text for contrast */
+            color: #F5F5DC !important;
         }
         .nav-link.active {
-            color: #FF8C00 !important; /* Orange accent for active link */
+            color: #FF8C00 !important;
         }
         .nav-link:hover {
-            color: #FF8C00 !important; /* Orange on hover */
+            color: #FF8C00 !important; 
         }
         .btn-logout { 
-            background-color: #FF8C00; /* Vibrant Orange */
+            background-color: #FF8C00;
             color: white !important; 
             border-radius: 50px; 
             padding: 0.5rem 1.5rem !important; 
@@ -90,14 +90,14 @@
         }
         .management-header h2 { 
             font-weight: 700; 
-            color: #001f3f; /* Deep Navy Blue */
+            color: #001f3f;
             display: flex; 
             align-items: center; 
             justify-content: center; 
             gap: 1rem; 
         }
         h4 {
-            color: #36454F; /* Charcoal Gray for subheadings */
+            color: #36454F; 
         }
         .form-control:focus, .form-select:focus { 
             border-color: #FF8C00; 
@@ -127,12 +127,12 @@
             border-color: #5a6268;
         }
         .table thead th { 
-            background-color: #001f3f; /* Deep Navy Blue */
+            background-color: #001f3f; 
             font-weight: 600; 
-            color: #F5F5DC; /* Beige text */
+            color: #F5F5DC;
         }
         .table-hover tbody tr:hover { 
-            background-color: rgba(0, 31, 63, 0.05); /* Navy Blue hover effect */
+            background-color: rgba(0, 31, 63, 0.05); 
         }
         .btn-primary {
             background-color: #FF8C00;
@@ -151,13 +151,13 @@
             border-color: #C82333;
         }
         
-        /* Action buttons spacing */
+   
         .action-buttons {
             display: flex;
-            gap: 0.75rem; /* Add spacing between buttons */
+            gap: 0.75rem; 
         }
         
-        /* Success message popup styling */
+      
         .success-popup {
             position: fixed;
             top: 100px;
@@ -197,7 +197,7 @@
             border: 1px solid #f5c6cb;
         }
         
-        /* CSS Animation for popup effect */
+      
         @keyframes popupAnimation {
             0% {
                 opacity: 0;

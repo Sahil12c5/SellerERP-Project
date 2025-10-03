@@ -23,7 +23,7 @@ public class ProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 🔐 Get session and user object
+       
         HttpSession session = request.getSession(false);
         UserPojo user = (UserPojo) session.getAttribute("user");
 
@@ -32,16 +32,16 @@ public class ProductServlet extends HttpServlet {
             return;
         }
 
-        String sellerPortId = user.getPortId(); // Get port_id from UserPojo
+        String sellerPortId = user.getPortId(); 
         String action = request.getParameter("action");
         String productIdStr = request.getParameter("product_id");
 
         try {
-            // Fetch all products for this seller
+            
             List<Product_pojo> productList = Product_pojo.getAllProductsBySeller(sellerPortId);
             request.setAttribute("productList", productList);
 
-            // Handle edit action
+            
             if ("edit".equals(action) && productIdStr != null) {
                 int productId = Integer.parseInt(productIdStr);
                 Product_pojo editProduct = Product_pojo.getById(productId);
@@ -68,7 +68,7 @@ public class ProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 🔐 Validate session and user
+     
         HttpSession session = request.getSession(false);
         UserPojo user = (UserPojo) session.getAttribute("user");
 
@@ -85,13 +85,13 @@ public class ProductServlet extends HttpServlet {
             pojo.setSeller_port_id(sellerPortId);
 
             if ("add".equals(action) || "update".equals(action)) {
-                // Extract form data
+             
                 String productName = request.getParameter("product_name");
                 String description = request.getParameter("description");
                 String quantityStr = request.getParameter("quantity");
                 String priceStr = request.getParameter("price");
 
-                // Validate required fields
+              
                 if (productName == null || productName.trim().isEmpty() ||
                     description == null || description.trim().isEmpty() ||
                     quantityStr == null || quantityStr.trim().isEmpty() ||
@@ -100,7 +100,7 @@ public class ProductServlet extends HttpServlet {
                     return;
                 }
 
-                // Parse and validate numeric values
+           
                 int quantity;
                 BigDecimal price;
                 try {
@@ -119,7 +119,7 @@ public class ProductServlet extends HttpServlet {
                     return;
                 }
 
-                // Set product data
+           
                 pojo.setProduct_name(productName);
                 pojo.setDescription(description);
                 pojo.setQuantity(quantity);

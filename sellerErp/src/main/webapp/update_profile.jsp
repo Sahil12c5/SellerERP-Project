@@ -3,14 +3,14 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
-    // 🔐 Session-based authentication using UserPojo object
+   
     UserPojo user = (UserPojo) session.getAttribute("user");
     if (user == null) {
         response.sendRedirect("login.jsp?msg=Please+log+in+to+update+your+profile");
         return;
     }
 
-    // Get message from request or session
+  
     String message = (String) request.getAttribute("message");
     if (message == null) {
         message = (String) session.getAttribute("flash");
@@ -21,7 +21,7 @@
 %>
 
 <%!
-    // Utility method to escape HTML for safety
+   
     public static String escapeHtml(String s) {
         if (s == null) return "";
         return s.replace("&", "&amp;")
@@ -39,20 +39,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Management</title>
 
-    <!-- Bootstrap CSS -->
+  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts: Poppins -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Icons -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+        
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F7F1E3; /* Soft Beige background */
+            background-color: #F7F1E3; 
             min-height: 100vh;
             padding-top: 5rem;
             display: flex;
@@ -61,21 +61,21 @@
         }
         .main-content { flex: 1; }
         .navbar-custom { 
-            background-color: #001f3f; /* Deep Navy Blue */
+            background-color: #001f3f; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
         .navbar-brand, .nav-link { 
             font-weight: 700; 
-            color: #F5F5DC !important; /* Beige text */
+            color: #F5F5DC !important; 
         }
         .nav-link.active {
-            color: #FF8C00 !important; /* Orange accent */
+            color: #FF8C00 !important;
         }
         .nav-link:hover {
-            color: #FF8C00 !important; /* Orange on hover */
+            color: #FF8C00 !important;
         }
         .btn-logout { 
-            background-color: #FF8C00; /* Vibrant Orange */
+            background-color: #FF8C00; 
             color: white !important; 
             border-radius: 50px; 
             padding: 0.5rem 1.5rem !important; 
@@ -92,14 +92,14 @@
         }
         .management-header h2 { 
             font-weight: 700; 
-            color: #001f3f; /* Deep Navy Blue */
+            color: #001f3f; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             gap: 1rem; 
         }
         h4 {
-            color: #36454F; /* Charcoal Gray for subheadings */
+            color: #36454F; 
         }
         .form-control:focus { 
             border-color: #FF8C00; 
@@ -125,26 +125,25 @@
             border-color: #C82333;
         }
 
-        /* === FIXED TABS: Improved Visibility === */
+      
         .nav-tabs .nav-link {
-            color: #36454F !important;           /* Charcoal Gray */
             font-weight: 600;
             border-bottom: 3px solid transparent;
             background-color: transparent;
             transition: all 0.2s ease;
         }
         .nav-tabs .nav-link:hover:not(.active) {
-            color: #001f3f !important;           /* Navy Blue on hover */
+            color: #001f3f !important;          
             border-color: #001f3f;
             background-color: #F8F8F0;
         }
         .nav-tabs .nav-link.active {
-            color: #FF8C00 !important;           /* Vibrant Orange */
+            color: #FF8C00 !important;          
             border-color: #FF8C00;
             background-color: #FFF8E7;
         }
 
-        /* Success message popup styling - COPIED FROM PRODUCT MANAGEMENT */
+        
         .success-popup {
             position: fixed;
             top: 100px;
@@ -197,7 +196,7 @@
             font-size: 1.2rem;
         }
         
-        /* CSS Animation for popup effect */
+       
         @keyframes popupAnimation {
             0% {
                 opacity: 0;

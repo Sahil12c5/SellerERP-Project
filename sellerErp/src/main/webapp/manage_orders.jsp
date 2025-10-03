@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
-    // 🔐 Session-based authentication using UserPojo object
+   
     UserPojo user = (UserPojo) session.getAttribute("user");
     if (user == null) {
         response.sendRedirect("login.jsp?msg=Please+log+in+to+manage+orders");
@@ -23,10 +23,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+        
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC; /* Soft Beige background to match dashboard */
+            background-color: #F5F5DC; 
             min-height: 100vh;
             padding-top: 5rem;
             display: flex;
@@ -34,21 +34,21 @@
         }
         .main-content { flex: 1; }
         .navbar-custom { 
-            background-color: #001f3f; /* Deep Navy Blue to match dashboard */
+            background-color: #001f3f; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
         .navbar-brand, .nav-link { 
             font-weight: 700; 
-            color: #F5F5DC !important; /* Beige text for contrast */
+            color: #F5F5DC !important; 
         }
         .nav-link.active {
-            color: #FF8C00 !important; /* Orange accent for active link */
+            color: #FF8C00 !important; 
         }
         .nav-link:hover {
-            color: #FF8C00 !important; /* Orange on hover */
+            color: #FF8C00 !important; 
         }
         .btn-logout { 
-            background-color: #FF8C00; /* Vibrant Orange */
+            background-color: #FF8C00; 
             color: white !important; 
             border-radius: 50px; 
             padding: 0.5rem 1.5rem !important; 
@@ -65,14 +65,14 @@
         }
         .management-header h2 { 
             font-weight: 700; 
-            color: #001f3f; /* Deep Navy Blue */
+            color: #001f3f; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             gap: 1rem; 
         }
         h4 {
-            color: #36454F; /* Charcoal Gray for subheadings */
+            color: #36454F; 
         }
         .form-control:focus, .form-select:focus { 
             border-color: #FF8C00; 
@@ -101,28 +101,28 @@
             background-color: #5a6268; color: white; 
         }
         .table thead th { 
-            background-color: #001f3f; /* Deep Navy Blue */
+            background-color: #001f3f; 
             font-weight: 600; 
-            color: #F5F5DC; /* Beige text */
+            color: #F5F5DC; 
         }
         .table-hover tbody tr:hover { 
-            background-color: rgba(0, 31, 63, 0.05); /* Navy Blue hover effect */
+            background-color: rgba(0, 31, 63, 0.05); 
         }
         .no-orders-message { 
             text-align: center; 
             padding: 2rem; 
             background-color: #f8f9fa; 
             border-radius: 8px; 
-            color: #36454F; /* Charcoal gray text */
+            color: #36454F; 
         }
         .footer {
-            background-color: #001f3f; /* Deep Navy Blue */
-            color: #F5F5DC; /* Beige text */
+            background-color: #001f3f;
+            color: #F5F5DC; 
             padding: 2rem 0;
             margin-top: 4rem;
         }
 
-        /* Success message popup styling */
+       
         .success-popup {
             position: fixed;
             top: 100px;
@@ -162,7 +162,7 @@
             border: 1px solid #f5c6cb;
         }
 
-        /* CSS Animation for popup effect */
+       
         @keyframes popupAnimation {
             0% {
                 opacity: 0;

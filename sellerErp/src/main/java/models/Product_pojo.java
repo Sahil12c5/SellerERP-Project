@@ -103,7 +103,7 @@ public class Product_pojo {
         return p;
     }
 
-    // New method to retrieve all products for a specific seller
+  
     public static List<Product_pojo> getAllProductsBySeller(String sellerPortId) throws SQLException {
         List<Product_pojo> productList = new ArrayList<>();
         String sql = "SELECT * FROM product WHERE seller_port_id = ?";

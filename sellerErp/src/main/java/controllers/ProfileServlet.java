@@ -59,7 +59,7 @@ public class ProfileServlet extends HttpServlet {
 
                 if (profile.updateProfile()) {
                     message = "Success! Profile updated successfully.";
-                    // ✅ user is already updated — stays in session
+
                 } else {
                     message = "Error: Failed to update profile.";
                 }

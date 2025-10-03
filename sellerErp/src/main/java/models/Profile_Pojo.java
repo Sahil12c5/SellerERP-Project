@@ -13,7 +13,7 @@ public class Profile_Pojo {
 	private String password;
 	private String location;
 
-	// Getter and Setter methods using standard conventions
+
 	public String getPortId() { return portId; }
 	public void setPortId(String portId) { this.portId = portId; }
 
@@ -29,7 +29,7 @@ public class Profile_Pojo {
 	public String getLocation() { return location; }
 	public void setLocation(String location) { this.location = location; }
 
-	// Method to fetch user details from the database
+
 	public boolean fetchUserDetails() throws SQLException {
 	    String query = "SELECT name, email, location FROM users WHERE port_id = ?";
 	    try (Connection con = GetConnection.getConnection();
@@ -48,7 +48,7 @@ public class Profile_Pojo {
 	}
 
 	public boolean updateProfile() throws SQLException {
-	    // Corrected parameter order and SQL. `password` is a separate update.
+	 
 	    String query = "UPDATE users SET name=?, email=?, location=? WHERE port_id=?";
 	    try (Connection con = GetConnection.getConnection();
 	         PreparedStatement preparedStatement = con.prepareStatement(query)) {
@@ -79,7 +79,7 @@ public class Profile_Pojo {
 	    }
 	}
 
-	// Method to check current password for validation
+	
 	public boolean checkPassword(String currentPassword) throws SQLException {
 		String query = "SELECT password FROM users WHERE port_id = ?";
 		try (Connection con = GetConnection.getConnection();

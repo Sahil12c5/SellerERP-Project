@@ -91,7 +91,7 @@ public class ReportManagement {
 
         try {
             con = GetConnection.getConnection();
-            // This SQL query joins 'reported_products' with 'product' to find reports for a specific seller.
+       
             String sql = "SELECT rp.* FROM reported_products rp JOIN product p ON rp.product_id = p.product_id WHERE p.seller_port_id = ?";
             ps = con.prepareStatement(sql);
             ps.setString(1, sellerPortId);
@@ -117,7 +117,7 @@ public class ReportManagement {
         return reportList;
     }
     
- // File: models/ReportManagement.java
+
 
     public List<ReportManagement> getReportsBySellerIdAndStatus(String sellerPortId, String statusFilter) throws SQLException {
         String sql = "SELECT r.report_id, r.product_id, r.reporter_id, r.reason, r.status " +
@@ -125,7 +125,7 @@ public class ReportManagement {
                      "JOIN product p ON r.product_id = p.product_id " +
                      "WHERE p.seller_port_id = ?";
 
-        // Add status filter if not "All"
+       
         if (statusFilter != null && !statusFilter.equalsIgnoreCase("All")) {
             sql += " AND r.status = ?";
         }

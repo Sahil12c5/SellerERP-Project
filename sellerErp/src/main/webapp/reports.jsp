@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%
-    // 🔐 Session-based authentication using UserPojo object
+   
     UserPojo user = (UserPojo) session.getAttribute("user");
     if (user == null) {
         response.sendRedirect("login.jsp?msg=Please+log+in+to+view+reports");
@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+        
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC; /* Soft Beige background */
+            background-color: #F5F5DC; 
             min-height: 100vh;
             padding-top: 5rem;
             display: flex;
@@ -39,21 +39,21 @@
             flex: 1;
         }
         .navbar-custom { 
-            background-color: #001f3f; /* Deep Navy Blue */
+            background-color: #001f3f; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
         }
         .navbar-brand, .nav-link { 
             font-weight: 700; 
-            color: #F5F5DC !important; /* Beige text */
+            color: #F5F5DC !important;
         }
         .nav-link.active {
-            color: #FF8C00 !important; /* Orange accent */
+            color: #FF8C00 !important; 
         }
         .nav-link:hover {
-            color: #FF8C00 !important; /* Orange on hover */
+            color: #FF8C00 !important; 
         }
         .btn-logout { 
-            background-color: #FF8C00; /* Vibrant Orange */
+            background-color: #FF8C00;
             color: white !important; 
             border-radius: 50px; 
             padding: 0.5rem 1.5rem !important; 
@@ -70,7 +70,7 @@
         }
         .management-header h2 { 
             font-weight: 700; 
-            color: #001f3f; /* Deep Navy Blue */
+            color: #001f3f; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -89,17 +89,17 @@
             color: white; 
         }
         .table thead th { 
-            background-color: #001f3f; /* Deep Navy Blue */
+            background-color: #001f3f; 
             font-weight: 600; 
-            color: #F5F5DC; /* Beige text */
+            color: #F5F5DC; 
             vertical-align: middle; 
         }
         .table tbody td { 
             vertical-align: middle; 
-            color: #36454F; /* Charcoal Gray */
+            color: #36454F; 
         }
         .table-hover tbody tr:hover { 
-            background-color: rgba(0, 31, 63, 0.05); /* Navy Blue hover */
+            background-color: rgba(0, 31, 63, 0.05); 
         }
         .status-badge { 
             padding: 0.4em 0.7em; 
@@ -134,38 +134,38 @@
             background-color: #f8d7da; 
         }
         .footer {
-            background-color: #001f3f; /* Deep Navy Blue */
-            color: #F5F5DC; /* Beige text */
+            background-color: #001f3f;
+            color: #F5F5DC; 
             padding: 2rem 0;
             margin-top: 4rem;
         }
 
-        /* Improve outline button visibility and text contrast */
+   
         .btn-outline-primary {
-            color: #001f3f !important;     /* Navy text */
+            color: #001f3f !important;     
             border-color: #001f3f;
         }
         .btn-outline-warning {
-            color: #8B4513 !important;     /* Saddle Brown for Open */
+            color: #8B4513 !important;    
             border-color: #FF8C00;
         }
         .btn-outline-success {
-            color: #006400 !important;     /* Dark Green for Resolved */
+            color: #006400 !important;     
             border-color: #28a745;
         }
 
-        /* Ensure active (filled) buttons have white text */
+      
         .btn-primary, .btn-warning, .btn-success {
             color: white !important;
         }
 
-        /* Button group spacing */
+  
         .btn-group .btn {
             font-weight: 500;
             transition: all 0.2s ease;
         }
         
-        /* New CSS for popup messages */
+   
         .popup {
             position: fixed;
             top: 100px;

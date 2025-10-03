@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Color Palette: Beige, Orange, Charcoal, Navy Blue */
+      
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #F5F5DC; /* Soft Beige background to match dashboard */
-            color: #36454F; /* Charcoal gray for general text */
+            background-color: #F5F5DC; 
+            color: #36454F; 
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,29 +22,29 @@
         }
 
         .registration-container {
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white to match dashboard container */
+            background-color: rgba(255, 255, 255, 0.95); 
             border-radius: 15px;
             padding: 2.5rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid #E0E0E0; /* Light Gray border */
+            border: 1px solid #E0E0E0;
         }
 
         .registration-header h2 {
             font-weight: 600;
-            color: #001f3f; /* Deep Navy Blue to match dashboard headings */
+            color: #001f3f; 
         }
 
         .registration-header p {
-            color: #36454F; /* Charcoal gray for subtext to match dashboard */
+            color: #36454F;
         }
 
         .form-control:focus {
-            border-color: #FF8C00; /* Vibrant Orange for focus, consistent with dashboard buttons */
+            border-color: #FF8C00;
             box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
         }
 
         .btn-register {
-            background-color: #FF8C00; /* Vibrant Orange for button to match dashboard buttons */
+            background-color: #FF8C00; 
             border: none;
             color: #fff;
             font-weight: 600;
@@ -53,16 +53,16 @@
         }
 
         .btn-register:hover {
-            background-color: #E57A00; /* Darker Orange on hover, consistent with dashboard */
+            background-color: #E57A00; 
         }
 
         .login-link {
             font-size: 0.9rem;
-            color: #36454F; /* Charcoal gray for text to match dashboard */
+            color: #36454F;
         }
 
         .login-link a {
-            color: #FF8C00; /* Vibrant Orange for links, consistent with dashboard */
+            color: #FF8C00; 
             font-weight: 600;
             text-decoration: none;
         }
@@ -76,18 +76,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #F5F5DC; /* Soft Beige text for contrast */
-            background-color: #001f3f; /* Deep Navy Blue background to match dashboard header */
+            color: #F5F5DC; 
+            background-color: #001f3f; 
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
-            height: 100%; /* Ensure it fills the column height */
+            height: 100%; 
         }
         
         .welcome-section i {
             font-size: 5rem;
             margin-bottom: 1.5rem;
-            color: #FF8C00; /* Vibrant Orange for icon, consistent with dashboard */
+            color: #FF8C00;
         }
         
         @media (max-width: 992px) {

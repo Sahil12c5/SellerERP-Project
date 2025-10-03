@@ -23,7 +23,7 @@ public class OrderManagementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 🔐 Get session and user object
+        
         HttpSession session = request.getSession(false);
         UserPojo user = (UserPojo) session.getAttribute("user");
 
@@ -34,7 +34,7 @@ public class OrderManagementServlet extends HttpServlet {
 
         String sellerPortId = user.getPortId();
 
-        // Handle action and filters
+       
         String action = request.getParameter("action");
         action = (action == null) ? "view" : action;
 
@@ -44,12 +44,12 @@ public class OrderManagementServlet extends HttpServlet {
         }
 
         try {
-            // Fetch orders for this seller
+           
             List<OrderManagement_pojo> orderList = OrderManagement_pojo.getAllOrdersBySeller(sellerPortId, statusFilter);
             request.setAttribute("orderList", orderList);
             request.setAttribute("selectedStatus", statusFilter);
 
-            // Handle specific actions
+           
             switch (action) {
                 case "new":
                     request.setAttribute("order", new OrderManagement_pojo());
@@ -76,7 +76,7 @@ public class OrderManagementServlet extends HttpServlet {
 
                 case "view":
                 default:
-                    // Just display the list
+                    
                     break;
             }
 
@@ -114,7 +114,7 @@ public class OrderManagementServlet extends HttpServlet {
             String successMessage;
 
             if (order.getOrder_id() == 0) {
-                // New order
+              
                 String buyerId = request.getParameter("buyer_id");
                 if (buyerId == null || buyerId.trim().isEmpty()) {
                     session.setAttribute("errorMessage", "Buyer ID is required.");
@@ -125,7 +125,7 @@ public class OrderManagementServlet extends HttpServlet {
                 order.insertOrder();
                 successMessage = "✅ Order created successfully!";
             } else {
-                // Existing order update
+                
                 OrderManagement_pojo existingOrder = OrderManagement_pojo.getOrderById(order.getOrder_id());
                 if (existingOrder == null || !existingOrder.getSeller_port_id().equals(sellerPortId)) {
                     session.setAttribute("errorMessage", "Unauthorized to update this order.");
@@ -136,10 +136,10 @@ public class OrderManagementServlet extends HttpServlet {
                 successMessage = "✅ Order updated successfully!";
             }
 
-            // Store success message in session
+           
             session.setAttribute("successMessage", successMessage);
 
-            // Redirect to view page
+           
             response.sendRedirect("manage_orders?action=view");
 
         } catch (NumberFormatException e) {

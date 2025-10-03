@@ -22,7 +22,7 @@ public class ReportManagementServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 🔐 Session validation
+      
         HttpSession session = request.getSession(false);
         UserPojo user = (UserPojo) session.getAttribute("user");
         if (session == null || user == null) {
@@ -33,7 +33,7 @@ public class ReportManagementServlet extends HttpServlet {
         String sellerPortId = user.getPortId();
         String statusFilter = request.getParameter("status_filter");
         if (statusFilter == null || statusFilter.isEmpty()) {
-            statusFilter = "All"; // Default: show all reports
+            statusFilter = "All"; 
         }
 
         try {
