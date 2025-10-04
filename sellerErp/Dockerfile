@@ -3,11 +3,11 @@ FROM maven:3.8.5-openjdk-11 AS build
 WORKDIR /app
 
 # Copy only the pom.xml first
-COPY sellerErp/pom.xml .
+COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy the source code
-COPY sellerErp/src ./src
+COPY src ./src
 
 # Build the WAR file
 RUN mvn clean package -DskipTests
