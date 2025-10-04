@@ -16,7 +16,7 @@ RUN mvn clean package
 
 
 # Stage 2: Create the final, runnable image with the correct Tomcat version
-FROM tomcat:10.0.27-jdk11-openjdk
+FROM tomcat:10.0.27-jdk11
 
 # Remove the default Tomcat welcome pages
 RUN rm -rf /usr/local/tomcat/webapps/*
