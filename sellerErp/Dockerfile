@@ -2,12 +2,12 @@
 FROM maven:3.8.5-openjdk-11 AS build
 WORKDIR /app
 
-# Copy only the pom.xml first
-COPY pom.xml .
+# Copy pom.xml from subfolder
+COPY sellerErp/pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy the source code
-COPY src ./src
+COPY sellerErp/src ./src
 
 # Build the WAR file
 RUN mvn clean package -DskipTests
