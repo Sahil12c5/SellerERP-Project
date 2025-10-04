@@ -1,25 +1,32 @@
-# Stage 1: Build with Maven
+# Stage 1: Build the application using Maven with Java 11
 FROM maven:3.8.5-openjdk-11 AS build
+
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy pom.xml from build folder
-COPY build/pom.xml .
+# Copy the pom.xml file first to leverage Docker's layer caching for dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
-# Copy the source code
+# Copy the rest of your application's source code
 COPY src ./src
 
-# Build the WAR file
-RUN mvn clean package -DskipTests
+# Build the .war file. This runs 'mvn clean package'
+RUN mvn clean package
 
-# Stage 2: Run with Tomcat
-FROM tomcat:9.0-jdk11-temurin
-WORKDIR /usr/local/tomcat
 
-# Remove default Tomcat webapps
-RUN rm -rf webapps/*
+# Stage 2: Create the final, runnable image with the correct Tomcat version
+FROM tomcat:10.0.27-jdk11-openjdk
 
-# Copy WAR file from Maven build
-COPY --from=build /app/target/*.war webapps/ROOT.war
+# Remove the default Tomcat welcome pages
+RUN rm -rf /usr/local/tomcat/webapps/*
 
+# Copy the .war file that was created in the 'build' stage
+# It's copied into Tomcat's deployment directory (webapps) as ROOT.war
+COPY --from=build /app/target/ROOT.war /usr/local/tomcat/webapps/ROOT.war
+
+# Tell Docker that the container listens on port 8080
 EXPOSE 8080
+
+# The command to start the Tomcat server when the container runs
 CMD ["catalina.sh", "run"]
