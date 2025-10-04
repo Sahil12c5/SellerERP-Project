@@ -2,12 +2,12 @@
 FROM maven:3.8.5-openjdk-11 AS build
 WORKDIR /app
 
-# Copy pom.xml from subfolder
-COPY sellerErp/pom.xml .
+# Copy pom.xml and download dependencies
+COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy the source code
-COPY sellerErp/src ./src
+COPY src ./src
 
 # Build the WAR file
 RUN mvn clean package -DskipTests
@@ -19,7 +19,7 @@ WORKDIR /usr/local/tomcat
 # Remove default Tomcat webapps
 RUN rm -rf webapps/*
 
-# Copy WAR file from Maven build stage
+# Copy WAR file from Maven build
 COPY --from=build /app/target/*.war webapps/ROOT.war
 
 EXPOSE 8080
