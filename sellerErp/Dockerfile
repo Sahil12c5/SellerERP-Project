@@ -4,12 +4,12 @@ FROM maven:3.8.5-openjdk-11 AS build
 # Set the working directory inside the container
 WORKDIR /app
 
-# CORRECTED: Copy pom.xml from the 'sellerErp' subdirectory
-COPY sellerErp/pom.xml .
+# Copy pom.xml from the project root
+COPY pom.xml .
 RUN mvn dependency:go-offline
 
-# CORRECTED: Copy the source code from the 'sellerErp/src' subdirectory
-COPY sellerErp/src ./src
+# Copy the source code from the project root
+COPY src ./src
 
 # Build the .war file. This runs 'mvn clean package'
 RUN mvn clean package
