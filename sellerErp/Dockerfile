@@ -4,12 +4,12 @@ FROM maven:3.8.5-openjdk-11 AS build
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the pom.xml file first to leverage Docker's layer caching for dependencies
-COPY pom.xml .
+# CORRECTED: Copy pom.xml from the 'sellerErp' subdirectory
+COPY sellerErp/pom.xml .
 RUN mvn dependency:go-offline
 
-# Copy the rest of your application's source code
-COPY src ./src
+# CORRECTED: Copy the source code from the 'sellerErp/src' subdirectory
+COPY sellerErp/src ./src
 
 # Build the .war file. This runs 'mvn clean package'
 RUN mvn clean package
