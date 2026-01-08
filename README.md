@@ -66,24 +66,6 @@ JDBC
 
 Apache Tomcat Server
 
-📂 Project Structure
-SellerERP/
-│
-├── src/
-│   ├── controller/      # Servlets (Controllers)
-│   ├── model/           # DAO & JavaBeans
-│   └── util/            # Database Utility
-│
-├── WebContent/
-│   ├── css/
-│   ├── js/
-│   ├── jsp/             # JSP Views
-│   └── index.jsp
-│
-├── database/
-│   └── sellererp.sql
-│
-└── README.md
 
 🗄️ Database Design
 
